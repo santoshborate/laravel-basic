@@ -3,6 +3,17 @@
 
 @section('content')
 
-    <a href="{{ route('post.index') }}"> Post </a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Dashboard
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    Welcome to laravel dashboard
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection

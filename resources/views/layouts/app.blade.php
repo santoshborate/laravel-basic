@@ -9,7 +9,16 @@
 </head>
 <body>
 @section('sidebar')
-    <h1> Laravel - CRUD operation </h1>
+    <div class="panel">
+        <div class="panel-heading">
+            <h1> Laravel - CRUD operation </h1>
+            <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ url('/') }}"><span class="glyphicon"></span> Home</a></li>
+                <li class="active"><a href="{{ url('/post') }}"><span class="glyphicon"></span> Post</a></li>
+            </ul>
+        </div>
+    </div>
 @show
 
 <div class="container">
