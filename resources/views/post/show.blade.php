@@ -5,7 +5,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{ __('post.Read Post') }} <a href="{{ url('/post') }}" class="label label-primary pull-right">{{ __('post.Back') }}</a>
+            {{ __('post.Read Post') }} <a href="{{ route('post.index') }}" class="label label-primary pull-right">{{ __('post.Back') }}</a>
         </div>
         <div class="panel-body">
                 <div class="row">

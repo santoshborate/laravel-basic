@@ -11,11 +11,25 @@
 @section('sidebar')
     <div class="panel">
         <div class="panel-heading">
-            <h1> Laravel - CRUD operation </h1>
+            <h1> Laravel - CRUD operation [Change locale in url]</h1>
             <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('/') }}"><span class="glyphicon"></span> Home</a></li>
-                <li class="active"><a href="{{ url('/post') }}"><span class="glyphicon"></span> Post</a></li>
+                <li class="active">
+                    <a href="{{ url('/' . session('locale')) }}"><span class="glyphicon"></span> Home</a>
+                </li>
+                <li class="active">
+                    <a href="{{ url('/'.session('locale').'/post')  }}"><span class="glyphicon"></span> Post</a>
+                </li>
+                <li>
+                    <form id="changeLocaleForm" name="changeLocale" action="{!! route('languagechooser') !!}" method  ="post">
+                        <select class="form-control" name="language" onchange="document.getElementById('changeLocaleForm').submit()">
+                                @foreach (config('app.locales') as $key => $language)
+                                       <option value="{{ $key  }}" @if ($key === Session::get('locale')) selected="selected" @endif> {{ $language }}</option>
+                                    @endforeach
+                           </select>
+                        {!!Form::token()!!}
+                        </form>
+                </li>
             </ul>
         </div>
     </div>

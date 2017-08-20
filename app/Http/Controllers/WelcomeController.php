@@ -14,4 +14,16 @@ class WelcomeController extends Controller
     {
         return view('welcome');
     }
+
+    /**
+     * @return mixed
+     */
+    public function changeLanguage(Request $request)
+    {
+         $lang = $request->get('language');
+
+        \Session::put('locale', $lang);
+
+        return \Redirect::back();
+    }
 }

@@ -30,4 +30,6 @@ return [
     'Published On' => 'Published On',
     'Are you sure to delete' => 'Are you sure to delete',
 
+    'Welcome to laravel dashboard' => 'Welcome to laravel dashboard',
+
 ];
