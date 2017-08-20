@@ -92,6 +92,8 @@ return [
 
     'fallback_locale' => 'en',
 
+    'locale_languages' => ['en' => 'English', 'nl' => 'Dutch'],
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
