@@ -11,7 +11,7 @@
 @section('sidebar')
     <div class="panel">
         <div class="panel-heading">
-            <h1> Laravel - CRUD operation </h1>
+            <h1> Laravel - CRUD operation [ localization with session ]</h1>
             <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ url('/') }}"><span class="glyphicon"></span> Home</a></li>
