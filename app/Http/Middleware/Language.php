@@ -37,7 +37,9 @@ class Language
             return $this->redirector->to(implode('/', $segments));
         }
 
+        Session::put('locale', $locale);
         $this->app->setLocale($locale);
+
         return $next($request);
     }
 }

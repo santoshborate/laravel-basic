@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <form id="changeLocaleForm" name="changeLocale" action="{!! route('languagechooser') !!}" method  ="post">
-                        <select class="form-control" name="language" onchange="document.getElementById('changeLocaleForm').submit()">
+                        <select class="form-control" name="language">
                                 @foreach (config('app.locales') as $key => $language)
                                        <option value="{{ $key  }}" @if ($key === Session::get('locale')) selected="selected" @endif> {{ $language }}</option>
                                     @endforeach
@@ -30,6 +30,20 @@
                         {!!Form::token()!!}
                         </form>
                 </li>
+                @foreach (config('app.locales') as $key => $language)
+                    <li>
+
+                        <a href="
+                                @if ($key != Session::get('locale'))
+                                    {{ str_replace('/'.Session::get('locale'), '/'.$key, Request::url()) }}
+                                @else
+                                    {{ Request::url() }}
+                                @endif
+                                ">
+                            {{ $language }}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
