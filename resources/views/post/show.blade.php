@@ -5,25 +5,25 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            Read Post <a href="{{ url('/post') }}" class="label label-primary pull-right">Back</a>
+            {{ __('post.Read Post') }} <a href="{{ url('/post') }}" class="label label-primary pull-right">{{ __('post.Back') }}</a>
         </div>
         <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Title:</strong>
+                            <strong>{{ __('post.Title') }}:</strong>
                             {{ $post->name }}
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Content:</strong>
+                            <strong>{{ __('post.Content') }}:</strong>
                             {{ $post->content }}
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Published On:</strong>
+                            <strong>{{ __('post.Published On') }}:</strong>
                             {{ $post->created_at }}
                         </div>
                     </div>
