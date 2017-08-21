@@ -36,5 +36,5 @@
         @endforeach
     </table>
 
-    {!! $posts->render() !!}
+    {!! $posts->links('post.pagination') !!}
 @endsection
