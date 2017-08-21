@@ -2,7 +2,7 @@
     <ul class="pagination">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="disabled"><span>&laquo; test</span></li>
+            <li class="disabled"><span>&laquo;</span></li>
         @else
             <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>
         @endif
