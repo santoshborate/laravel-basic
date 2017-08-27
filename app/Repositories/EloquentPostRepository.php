@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Post;
+use App\Models\Post;
 
 class EloquentPostRepository implements PostRepositoryInterface
 {
@@ -14,7 +14,7 @@ class EloquentPostRepository implements PostRepositoryInterface
     /**
      * EloquentPost constructor.
      *
-     * @param App\Post $model
+     * @param App/Post $model
      */
     public function __construct(Post $model)
     {
@@ -24,7 +24,7 @@ class EloquentPostRepository implements PostRepositoryInterface
     /**
      * Get all posts in pagination
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return Illuminate/Database/Eloquent/Collection
      */
     public function paginate($limit = 5)
     {
@@ -36,7 +36,7 @@ class EloquentPostRepository implements PostRepositoryInterface
      *
      * @param integer $id
      *
-     * @return App\Post
+     * @return boolean
      */
     public function find($id)
     {
@@ -46,7 +46,7 @@ class EloquentPostRepository implements PostRepositoryInterface
     /**
      * Get all posts.
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return Illuminate/Database/Eloquent/Collection
      */
     public function getAll()
     {
@@ -58,7 +58,7 @@ class EloquentPostRepository implements PostRepositoryInterface
      *
      * @param integer $id
      *
-     * @return App\Post
+     * @return object
      */
     public function getById($id)
     {
@@ -70,7 +70,7 @@ class EloquentPostRepository implements PostRepositoryInterface
      *
      * @param array $attributes
      *
-     * @return App\Post
+     * @return boolean
      */
     public function create(array $attributes)
     {
@@ -83,7 +83,7 @@ class EloquentPostRepository implements PostRepositoryInterface
      * @param integer $id
      * @param array $attributes
      *
-     * @return App\Post
+     * @return boolean
      */
     public function update($id, array $attributes)
     {
