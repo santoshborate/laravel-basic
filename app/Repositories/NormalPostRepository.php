@@ -21,7 +21,7 @@ class NormalPostRepository implements PostRepositoryInterface
     /**
      * Get all posts in pagination
      *
-     * @return Illuminate\Support\Collection
+     * @return Illuminate/Support/Collection
      */
     public function paginate($limit = 5)
     {
@@ -33,7 +33,7 @@ class NormalPostRepository implements PostRepositoryInterface
      *
      * @param integer $id
      *
-     * @return App\PostRepository
+     * @return object
      */
     public function find($id)
     {
@@ -43,7 +43,7 @@ class NormalPostRepository implements PostRepositoryInterface
     /**
      * Get all posts.
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return Illuminate/Database/Eloquent/Collection
      */
     public function getAll()
     {
@@ -55,7 +55,7 @@ class NormalPostRepository implements PostRepositoryInterface
      *
      * @param integer $id
      *
-     * @return App\PostRepository
+     * @return object
      */
     public function getById($id)
     {
@@ -67,14 +67,10 @@ class NormalPostRepository implements PostRepositoryInterface
      *
      * @param array $attributes
      *
-     * @return App\PostRepository
+     * @return boolean
      */
     public function create(array $attributes)
     {
-        unset($attributes['_token']);
-        $attributes['created_at'] = date('Y-m-d H:i:s');
-        $attributes['updated_at'] = date('Y-m-d H:i:s');
-
         return $this->model->insert($attributes);
     }
 
@@ -84,20 +80,15 @@ class NormalPostRepository implements PostRepositoryInterface
      * @param integer $id
      * @param array $attributes
      *
-     * @return App\PostRepository
+     * @return boolean
      */
     public function update($id, array $attributes)
     {
-        unset($attributes['_token']);
-        unset($attributes['_method']);
-        $attributes['created_at'] = date('Y-m-d H:i:s');
-        $attributes['updated_at'] = date('Y-m-d H:i:s');
-
         return $this->model->where('id', $id)->update($attributes);
     }
 
     /**
-     * Delete a task.
+     * Delete a post.
      *
      * @param integer $id
      *
@@ -105,6 +96,6 @@ class NormalPostRepository implements PostRepositoryInterface
      */
     public function delete($id)
     {
-        return $this->model->find($id)->delete();
+        return $this->model->where('id', $id)->delete();
     }
 }

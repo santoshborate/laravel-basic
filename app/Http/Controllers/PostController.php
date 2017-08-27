@@ -3,24 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use App\Repositories\PostRepositoryInterface;
+use App\Services\Backend\PostService;
 
 class PostController extends Controller
 {
     /**
-     * @var $post
+     * @var $postService
      */
-    private $post;
+    private $postService;
 
     /**
-     * TaskController constructor.
+     * PostController constructor.
      *
-     * @param App\Repositories\PostRepositoryInterface $post
+     * @param App/Services/Backend/PostService $postService
      */
-    public function __construct(PostRepositoryInterface $post)
+    public function __construct(PostService $postService)
     {
-        $this->post = $post;
+        $this->postService = $postService;
     }
 
     /**
@@ -31,7 +30,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         // $posts = post::orderBy('id', 'desc')->paginate(5);
-        $posts = $this->post->paginate(3);
+        $posts = $this->postService->paginate(3);
 
         return view('post.list', ['posts' => $posts])->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -60,7 +59,7 @@ class PostController extends Controller
         ]);
 
         //post::create($request->all());
-        $this->post->create($request->all());
+        $this->postService->create($request->all());
         
         return redirect()->route('post.index')->with('success','Post created successfully');
     }
@@ -75,7 +74,7 @@ class PostController extends Controller
     {
         // Get post data by id
         // $post = Post::find($id);
-        $post = $this->post->find($id);
+        $post = $this->postService->find($id);
 
         return view('post.show', ['post' => $post]);
     }
@@ -90,7 +89,7 @@ class PostController extends Controller
     {
         // Get post data by id
         // $post = Post::find($id);
-        $post = $this->post->find($id);
+        $post = $this->postService->find($id);
 
         // Load form view
         return view('post.edit', ['post' => $post]);
@@ -116,7 +115,7 @@ class PostController extends Controller
 
         //update post data
         // Post::find($id)->update($postData);
-        $post = $this->post->update($id, $postData);
+        $post = $this->postService->update($id, $postData);
 
         return redirect()->route('post.index')->with('success','Post updated successfully');
     }
@@ -131,7 +130,7 @@ class PostController extends Controller
     {
         // Delete post data
         // Post::find($id)->delete();
-        $this->post->delete($id);
+        $this->postService->delete($id);
 
         return redirect()->route('post.index')->with('success','Post deleted successfully');
     }

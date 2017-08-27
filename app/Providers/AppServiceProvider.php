@@ -32,6 +32,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function contract ()
     {
-        $this->app->singleton(PostRepositoryInterface::class, NormalPostRepository::class);
+       // $this->app->singleton(PostRepositoryInterface::class, NormalPostRepository::class);
     }
 }
