@@ -10,7 +10,14 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    Welcome to laravel dashboard
+                    {{ __('post.Welcome to laravel dashboard') }}
+                    <p>
+                        @if( Session::has('locale') )
+                           Locale: {{ Session::get('locale') }}
+                        @else
+                            No session locale set
+                        @endif
+                   </p>
                 </div>
             </div>
         </div>

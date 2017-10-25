@@ -12,7 +12,7 @@
             <a href="{{ route('post.index') }}" class="label label-primary pull-right">{{ __('post.Back') }}</a>
         </div>
         <div class="panel-body">
-            <form action="{{ url('post/' . $post->id) }}" method="POST" class="form-horizontal">
+            <form action="{{ route('post.update', $post->id) }}" method="POST" class="form-horizontal">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">

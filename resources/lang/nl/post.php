@@ -30,4 +30,5 @@ return [
     'Published On' => 'Gepubliceerd op',
     'Are you sure to delete' => 'Weet u zeker dat u wilt verwijderen',
 
+    'Welcome to laravel dashboard' => 'Welkom bij Laravel dashboard',
 ];

@@ -12,7 +12,7 @@
             <a href="{{ route('post.index') }}" class="label label-primary pull-right">{{ __('post.Back') }}</a>
         </div>
         <div class="panel-body">
-            <form action="{{ url('post') }}" method="POST" class="form-horizontal">
+            <form action="{{ route('post.store') }}" method="POST" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label class="control-label col-sm-2" >{{ __('post.Title') }}</label>
