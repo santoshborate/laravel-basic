@@ -13,6 +13,11 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::post('languagechooser', [
+    'as' => 'languagechooser',
+    'uses' => 'WelcomeController@changeLanguage'
+]);
+
 Route::get('/register', function () {
     return view('welcome');
 });
