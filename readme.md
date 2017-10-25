@@ -14,4 +14,9 @@ app/Http/Middleware/Locale.php
 config/app.php                             
 resources/views/layouts/app.blade.php      
 resources/views/welcome.blade.php          
-routes/web.php                            
+routes/web.php    
+                        
+                        
+Reference link : 
+http://www.glutendesign.com/posts/detect-and-change-language-on-the-fly-with-laravel
+https://stackoverflow.com/questions/42395481/change-language-in-laravel-5
