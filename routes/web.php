@@ -19,3 +19,7 @@ Route::get('/register', function () {
 
 Route::get('/post/delete/{id}', 'PostController@destroy')->name('post.delete');
 Route::resource('post', 'PostController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
